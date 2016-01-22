@@ -23,5 +23,13 @@ describe('simpsons-names', function() {
       var randomItem = simpsons.random();
       expect(simpsons.all).to.include(randomItem);
     });
+
+    it('should return an array of random items if passed a number', function() {
+      var randomItems = simpsons.random(3);
+      expect(randomItems).to.have.length(3);
+      randomItems.forEach(function (item) {
+        expect(simpsons.all).to.include(item);
+      });
+    });
   });
 });
