@@ -11,6 +11,7 @@
     "commit": "git-cz",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "start": "npm run test",
     "test": "mocha src/index.test.js -w --compilers js:babel-core/register",
     "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js --compilers js:babel-core/register"
   },
