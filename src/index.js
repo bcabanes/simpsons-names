@@ -1,6 +1,8 @@
-var uniqueRandomArray = require('unique-random-array');
-var simpsonsNames = require('./simpsons-names.json');
+import uniqueRandomArray from 'unique-random-array';
+import simpsonsNames from './simpsons-names.json';
+
 var getRandomItem = uniqueRandomArray(simpsonsNames);
+
 module.exports = {
   all: simpsonsNames,
   random: random
