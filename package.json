@@ -13,7 +13,8 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start": "npm run test",
     "test": "mocha src/index.test.js -w --compilers js:babel-core/register",
-    "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js --compilers js:babel-core/register"
+    "test:single": "babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha -- -R spec src/index.test.js --compilers js:babel-core/register --reporter dot",
+    "test:istanbul": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   "keywords": [
     "random",
     "simspons",
-    "charaters"
+    "characters"
   ],
   "author": "Benjamin Cabanes <contact@benjamincabanes.com> (http://benjamincabanes.com/)",
   "license": "MIT",
@@ -42,6 +43,7 @@
     "commitizen": "2.5.0",
     "cz-conventional-changelog": "1.1.5",
     "ghooks": "1.0.3",
+    "isparta": "4.0.0",
     "istanbul": "0.4.2",
     "mocha": "2.3.4",
     "semantic-release": "^4.3.5"
